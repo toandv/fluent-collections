@@ -32,9 +32,9 @@ public interface FluentList<E> extends FluentCollection<E>, List<E> {
 ```
 
 FluentList<E> interface now has three implementations
-1. FluentArrayList<E> wraps JDK ArrayList<E>
-2. FluentLinkedList<E> wraps JDK LinkedList<E>
-3. FluentFastList<E> wraps FastList<E> from Goldman Sachs Collections
+* FluentArrayList<E> wraps JDK ArrayList<E>
+* FluentLinkedList<E> wraps JDK LinkedList<E>
+* FluentFastList<E> wraps FastList<E> from Goldman Sachs Collections
 
 ### FluentList's Usage
 
@@ -60,10 +60,19 @@ public class FluentListTest {
         fluentList.plus(new FluentFastList<String>().plus("s3", "s4"));
 
         fluentList.plus(new FluentLinkedList<String>().plus("s5", "s6"));
+        
+        // lambda expression used to iterate over the list
+        list.forEach(e -> System.out.print(e.toUpperCase() + " | "));
 
     }
 }
 
+```
+
+The output is:
+
+```
+S0 | S1 | S2 | S2 | S3 | S4 | S5 | S6 | 
 ```
 
 
