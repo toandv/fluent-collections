@@ -1,6 +1,6 @@
 ## Fluent Collection
 
-Fluent Collection is an extension of Java Collection Framework (JDK 1.8), providing fluent APIs when working with essential data structures such List, Set, Map. This project is not intended to reinvent the wheels, it just provides another convenient and fluent way to work with collections by wrapping existing implementations. 
+Fluent Collection is an extension of Java Collection Framework (JDK 1.8), providing fluent APIs when working with essential data structures such as List, Set, Map. This project is not intended to reinvent the wheels, it just provides another convenient and fluent way to work with collections by wrapping existing implementations. 
 
 
 ### FluentList
