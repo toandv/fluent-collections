@@ -4,7 +4,7 @@ Fluent Collection is an extension of Java Collection Framework, providing fluent
 
 
 
-## FluentList
+### FluentList
 
 ```java
 package fluent.collection;
@@ -76,9 +76,77 @@ S0 | S1 | S2 | S2 | S3 | S4 | S5 | S6 |
 ```
 
 
+### FluentMap
+
+```java
+package fluent.collection;
+
+import java.util.Collection;
+import java.util.Map;
+
+import fluent.tuple.Pair;
+
+public interface FluentMap<K, V> extends Map<K, V> {
+
+    public FluentMap<K, V> plus(Pair<? extends K, ? extends V> p);
+
+    public FluentMap<K, V> plus(K key, V value);
+
+    public FluentMap<K, V> plus(K k1, V v1, K k2, V v2);
+
+    public FluentMap<K, V> plus(K k1, V v1, K k2, V v2, K k3, V v3);
+
+    public FluentMap<K, V> plus(Pair<? extends K, ? extends V> p1, Pair<? extends K, ? extends V> p2);
+
+    public FluentMap<K, V> plus(Pair<? extends K, ? extends V> p1, Pair<? extends K, ? extends V> p2,
+            Pair<? extends K, ? extends V> p3);
+
+    public FluentMap<K, V> plus(Pair<? extends K, ? extends V> p1, Pair<? extends K, ? extends V> p2,
+            Pair<? extends K, ? extends V> p3, @SuppressWarnings("unchecked") Pair<? extends K, ? extends V>... rest);
+
+    public FluentMap<K, V> plus(Collection<Pair<? extends K, ? extends V>> c);
+
+    public FluentMap<K, V> plus(Map<? extends K, ? extends V> map);
+
+}
+```
+
+FluentMap has two implementations:
+* FluentHashMap<K, V> wrap JDK HashMap<K, V> 
+* FluentLinkedHashMap<K, V> wrap JDK LinkedHashMap
 
 
+### FluentMap's Usage
 
+```java
+package fluent.collection;
+
+import java.util.Map;
+import fluent.collection.mutable.FluentHashMap;
+import fluent.collection.support.FluentMapSupport.KeyVal;
+
+public class FluentMapTest {
+    public static void main(String[] args) {
+        Map<String, String> map = new FluentHashMap<String, String>().plus("k1", "v1", "k2", "v2", "k3", "v3");
+
+        FluentMap<String, String> fluentMap = (FluentMap<String, String>) map;
+
+        fluentMap.plus(new KeyVal<String, String>("k4", "v4"));
+
+        map.forEach((k, v) -> System.out.println(k + "=>" + v));
+    }
+}
+
+```
+
+The output is:
+
+```
+k1=>v1
+k2=>v2
+k3=>v3
+k4=>v4
+``
 
 
 
