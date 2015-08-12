@@ -102,7 +102,7 @@ public interface FluentMap<K, V> extends Map<K, V> {
             Pair<? extends K, ? extends V> p3);
 
     public FluentMap<K, V> plus(Pair<? extends K, ? extends V> p1, Pair<? extends K, ? extends V> p2,
-            Pair<? extends K, ? extends V> p3, @SuppressWarnings("unchecked") Pair<? extends K, ? extends V>... rest);
+            Pair<? extends K, ? extends V> p3, Pair<? extends K, ? extends V>... rest);
 
     public FluentMap<K, V> plus(Collection<Pair<? extends K, ? extends V>> c);
 
@@ -146,7 +146,7 @@ k1=>v1
 k2=>v2
 k3=>v3
 k4=>v4
-``
+```
 
 
 
