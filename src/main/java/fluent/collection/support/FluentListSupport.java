@@ -7,10 +7,10 @@ import java.util.ListIterator;
 
 import fluent.collection.FluentList;
 
-public abstract class FluentListSupport<E> extends FluentCollectionSupport<E>implements FluentList<E> {
-    protected List<E> backingList;
+public abstract class FluentListSupport<E> extends FluentCollectionSupport<E> implements FluentList<E> {
+    protected final List<E> backingList;
 
-    public FluentListSupport(List<E> backingList) {
+    protected FluentListSupport(List<E> backingList) {
         this.backingList = backingList;
     }
 
@@ -54,11 +54,6 @@ public abstract class FluentListSupport<E> extends FluentCollectionSupport<E>imp
     public FluentList<E> plus(Collection<? extends E> c) {
         super.plus(c);
         return this;
-    }
-
-    @Override
-    protected void plus1(E e) {
-        backingList.add(e);
     }
 
     // JDK

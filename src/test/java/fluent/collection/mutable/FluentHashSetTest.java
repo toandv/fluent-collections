@@ -31,4 +31,10 @@ public class FluentHashSetTest {
         Set<Number> set = new FluentHashSet<Number>().plus(1, 2f, 1l);
         assertThat(set).hasSize(3);
     }
+
+    @Test
+    public void testPlus8() {
+        Set<String> set = new FluentHashSet<String>().plus("e1", "e2", "e3", "e4", "e4", "e5", "e6", "e7", "e8");
+        assertThat(set).hasSize(8);
+    }
 }

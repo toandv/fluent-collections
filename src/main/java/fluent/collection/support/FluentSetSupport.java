@@ -6,10 +6,10 @@ import java.util.Set;
 
 import fluent.collection.FluentSet;
 
-public abstract class FluentSetSupport<E> extends FluentCollectionSupport<E>implements FluentSet<E> {
-    protected Set<E> backingSet;
+public abstract class FluentSetSupport<E> extends FluentCollectionSupport<E> implements FluentSet<E> {
+    protected final Set<E> backingSet;
 
-    public FluentSetSupport(Set<E> backingSet) {
+    protected FluentSetSupport(Set<E> backingSet) {
         this.backingSet = backingSet;
     }
 
@@ -53,11 +53,6 @@ public abstract class FluentSetSupport<E> extends FluentCollectionSupport<E>impl
     public FluentSet<E> plus(Collection<? extends E> c) {
         super.plus(c);
         return this;
-    }
-
-    @Override
-    protected void plus1(E e) {
-        backingSet.add(e);
     }
 
     // JDK Set operations
