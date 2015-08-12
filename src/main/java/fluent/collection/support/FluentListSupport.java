@@ -157,4 +157,9 @@ public abstract class FluentListSupport<E> extends FluentCollectionSupport<E> im
         return backingList.subList(fromIndex, toIndex);
     }
 
+    @Override
+    public String toString() {
+        return "FluentListSupport [backingList=" + backingList + "]";
+    }
+
 }

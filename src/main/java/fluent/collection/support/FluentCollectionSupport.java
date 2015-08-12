@@ -67,4 +67,10 @@ public abstract class FluentCollectionSupport<E> implements FluentCollection<E> 
         }
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "FluentCollectionSupport [toString()=" + super.toString() + "]";
+    }
+
 }
