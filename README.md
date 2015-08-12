@@ -111,8 +111,8 @@ public interface FluentMap<K, V> extends Map<K, V> {
 ```
 
 FluentMap has two implementations:
-* FluentHashMap<K, V> wrap JDK HashMap<K, V> 
-* FluentLinkedHashMap<K, V> wrap JDK LinkedHashMap
+* FluentHashMap<K, V> wraps JDK HashMap<K, V> 
+* FluentLinkedHashMap<K, V> wraps JDK LinkedHashMap
 
 
 ### FluentMap's Usage
