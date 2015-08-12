@@ -4,7 +4,7 @@ import fluent.collection.support.FluentListSupport;
 
 public final class FluentArrayList<E> extends FluentListSupport<E> {
 
-    private FluentArrayList() {
+    public FluentArrayList() {
         super(new java.util.ArrayList<E>());
     }
 }
